@@ -15,8 +15,8 @@ docrevision: "1.0"
 #  - angle=0
 
 verbcolored: false
-rmnote: false
-toc-title: "目次"
+# rmnote: false
+#toc-title: "Table of Contents"
 
 svgbob:
   font-family: "Source Code Pro"
@@ -73,10 +73,11 @@ docx_coreprop:
   #  language: "Japanese" # ignored?
   #  version: "Version" # ignored?
 
+  extra_section: false
   table-alignment-in-page: center # left / center /right
   table-cell-vertical-alignment: center # top / center / bottom / both
-  read-only-recommended: false # Better set true but this messes with GitHubActions to convert to PDF using Word
-  disable-table-autofit: false # setting 'true' requires explicit column widths setting
+  read-only-recommended: true
+  disable-table-autofit: false # requires explicit column widths setting for *every* table when setting 'true'
   table:
   #    "Normal Table": "Centered"
   paragraph:
@@ -84,4 +85,5 @@ docx_coreprop:
   #    "Normal": "Body Text"
   #    "First Paragraph": "Body Text"
   character:
+  okuzuke:
 ...
