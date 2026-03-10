@@ -1,10 +1,10 @@
 ---
-title: 本のタイトル
-subtitle: 本の概要
-circle: サークル名
-author: 本の作者
-comiket: コミケ
-year: 出版年
+title: 「Shrike」FPGAボード試してみたレポート
+subtitle: RP2040と連携動作もできる・はず
+circle: KY技研
+author: K4zuki
+comiket: C108
+year: 2026
 publisher: 印刷会社で印刷製本
 docrevision: "1.0"
 # front: images/front-image.png
@@ -79,11 +79,22 @@ docx_coreprop:
   read-only-recommended: true
   disable-table-autofit: false # requires explicit column widths setting for *every* table when setting 'true'
   table:
-  #    "Normal Table": "Centered"
+    "Normal Table": "Centered"
   paragraph:
     "Image Caption": "Figure Caption"
-  #    "Normal": "Body Text"
-  #    "First Paragraph": "Body Text"
+    "Normal": "Body Text"
+    "First Paragraph": "Body Text"
   character:
-  okuzuke:
+    "Verbatim Char": "NormalTok"
+  okuzuke: # comment out if you don't want Okuzuke
+    table-style: "Centered"
+    para-style: "Table Body Center"
+    rows:
+      - "「Shrike」FPGAボード試してみたレポート / RP2040と連携動作もできる・はず"
+      - "K4ZUKI / KY技研"
+      - "Comiket 108 / 2026"
+      - |
+        Markdown x Pandoc Version 3.7 (DOCX writer)
+        with docx-coreprop-writer program
+      - "キンコーズオンラインで印刷製本"
 ...
