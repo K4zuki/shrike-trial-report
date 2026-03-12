@@ -73,7 +73,7 @@ docx_coreprop:
   #  language: "Japanese" # ignored?
   #  version: "Version" # ignored?
 
-  extra_section: false
+  extra_section: true
   table-alignment-in-page: center # left / center /right
   table-cell-vertical-alignment: center # top / center / bottom / both
   read-only-recommended: true
