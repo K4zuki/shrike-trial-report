@@ -1,0 +1,84 @@
+# https://splitbrain.github.io/pinoutleaf/
+# https://amamamaou.github.io/svg2png/
+title: "Shrike Lite (V1.0 R0.4)"
+
+# dimensions counted in pins
+width: 10
+height: 19
+
+# special pins
+types:
+  fpga:
+    label: "FPGA GPIO"
+    bgcolor: "#E38022"
+    fgcolor: "#FFFFFF"
+  spi_master:
+    label: "FPGA load from flash"
+    bgcolor: "#cccccc"
+    fgcolor: "#333333"
+  spi_slave:
+    label: "FPGA load from MCU"
+    bgcolor: "#FCFBFE"
+    fgcolor: "#775EE8"
+offsets:
+  left: 0
+  top: 0
+  right: 0
+  bottom: 7
+# Define the pins (label:type), use empty entries when offsets are needed
+pins:
+  left:
+    - [ "1", "5V:power" ]
+    - [ "2", "3.3V:power" ]
+    - [ "3", "RP_IO5:gpio" ]
+    - [ "4", "RP_IO6:gpio" ]
+    - [ "5", "RP_IO7:gpio" ]
+    - [ "6", "RP_IO8:gpio", "SPI1 MISO:spi" ]
+    - [ "7", "RP_IO9:gpio", "SPI1 CS:spi" ]
+    - [ "8", "GND:gnd" ]
+    - [ "9", "RP_IO10:gpio", "SPI1 SCK:spi" ]
+    - [ "10", "RP_IO11:gpio", "SPI1 MOSI:spi" ]
+    - [ "11", "RP_IO14:gpio" ]
+    - [ "12", "RP_IO15:gpio" ]
+    - [ "13", "GND:gnd" ]
+    - [ "14", "FPGA_IO17:fpga" ]
+    - [ "15", "FPGA_IO18:fpga" ]
+    - [ "16", "FPGA_IO0:fpga" ]
+    - [ "17", "FPGA_IO1:fpga" ]
+    - [ "18", "FPGA_IO2:fpga" ]
+    - [ "19", "FPGA_IO7:fpga" ]
+
+  right:
+    - [ "38", "5V:power" ]
+    - [ "37", "3.3V:power" ]
+    - [ "36", "RP_IO29:gpio" ]
+    - [ "35", "RP_IO28:gpio" ]
+    - [ "34", "RP_IO27:gpio" ]
+    - [ "33", "RP_IO26:gpio" ]
+    - [ "32", "GND:gnd" ]
+    - [ "31", "RP_IO25:gpio" ]
+    - [ "30", "RP_IO24:gpio" ]
+    - [ "29", "RP_IO23:gpio" ]
+    - [ "28", "RP_IO22:gpio" ]
+    - [ "27", "RP_IO21:gpio" ]
+    - [ "26", "GND:gnd" ]
+    - [ "25", "RP_IO20:gpio" ]
+    - [ "24", "RP_IO19:gpio" ]
+    - [ "23", "RP_IO18:gpio" ]
+    - [ "22", "RP_IO17:gpio" ]
+    - [ "21", "RP_IO16:gpio" ]
+    - [ "20", "GND:gnd" ]
+
+  bottom:
+    -
+    -
+    - [ "(S)MISO:spi_slave", "SPI0 MISO:spi", "(M)MOSI:spi_master", "FPGA_IO6:fpga", "RP_IO0:gpio" ]
+    - [ "(S)MOSI:spi_slave", "SPI0 MOSI:spi", "(M)MISO:spi_master", "FPGA_IO5:fpga", "RP_IO3:gpio" ]
+    - [ "(S)CS:spi_slave", "SPI0 CS:spi", "(M)CS:spi_master", "FPGA_IO4:fpga", "RP_IO1:gpio" ]
+    - [ "(S)SCK:spi_slave", "SPI0 SCK:spi", "(M)SCK:spi_master", "FPGA_IO3:fpga", "RP_IO2:gpio" ]
+#    -
+#    - ["PWR:fpga", "RP_IO12:gpio"]
+#    - ["EN:fpga", "RP_IO13:gpio"]
+#    -
+#    - ["FPGA_IO18:fpga", "RP_IO14:gpio", "I2C1 SDA:i2c"]
+#    - ["FPGA_IO17:fpga", "RP_IO15:gpio", "I2C1 SCL:i2c"]

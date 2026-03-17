@@ -1,0 +1,36 @@
+# https://splitbrain.github.io/pinoutleaf/
+# https://amamamaou.github.io/svg2png/
+title: "Shrike Lite  (V1.0 R0.4) / PMOD"
+
+# dimensions counted in pins
+width: 6
+height: 2
+
+# special pins
+types:
+  fpga:
+    label: "FPGA GPIO"
+    bgcolor: "#E38022"
+    fgcolor: "#FFFFFF"
+  led:
+    label: "Indicator LED"
+    bgcolor: "#ffff00"
+    fgcolor: "#0"
+
+# Define the pins (label:type), use empty entries when offsets are needed
+pins:
+  top:
+    - [ "6", "3.3V:power" ]
+    - [ "5", "GND:gnd" ]
+    - [ "4", "FPGA_IO8:fpga" ]
+    - [ "3", "FPGA_IO10:fpga" ]
+    - [ "2", "FPGA_IO12:fpga" ]
+    - [ "1", "FPGA_IO14:fpga" ]
+
+  bottom:
+    - [ "12", "3.3V:power" ]
+    - [ "11", "GND:gnd" ]
+    - [ "10", "FPGA_IO9:fpga" ]
+    - [ "9", "FPGA_IO11:fpga" ]
+    - [ "8", "FPGA_IO13:fpga" ]
+    - [ "7", "FPGA_IO15:fpga" ]
