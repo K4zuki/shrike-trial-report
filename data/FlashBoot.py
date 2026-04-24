@@ -103,9 +103,10 @@ class FlashBoot:
         self.en.low()
         self.pwr.low()
         time.sleep_us(1100)
-        self.cs.high()
         self.pwr.high()
         self.en.high()
+        time.sleep_us(3)
+        self.cs.high()
         time.sleep_us(1100)
         for _ in range(FLASH_IMAGE_SIZE // 100):
             print(".", end="")
