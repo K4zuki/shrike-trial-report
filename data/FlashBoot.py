@@ -97,8 +97,8 @@ class FlashBoot:
         self.wake_flash()
 
         self.disable_bus()
-        self.cs.init(Pin.OPEN_DRAIN, pull=Pin.PULL_UP, value=1)
-        time.sleep_us(300)
+        self.cs.init(Pin.IN, pull=Pin.PULL_UP, value=1)
+        time.sleep_ms(10)
 
         self.en.low()
         self.pwr.low()
