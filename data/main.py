@@ -31,8 +31,8 @@ CS1 = machine.Pin(SPI1_CS, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, val
 SCLK1 = machine.Pin(SPI1_SCLK, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)
 MOSI1 = machine.Pin(SPI1_MOSI, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)
 
-PWR = machine.Pin(PWR_PIN, machine.Pin.OUT)
-EN = machine.Pin(EN_PIN, machine.Pin.OUT)
+PWR = machine.Pin(PWR_PIN, machine.Pin.OUT, value=0)
+EN = machine.Pin(EN_PIN, machine.Pin.OUT, value=0)
 
 # Initialize SPI
 
