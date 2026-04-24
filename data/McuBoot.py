@@ -49,6 +49,7 @@ class McuBoot:
         for pin in self.pins:
             pin.init(Pin.IN)
         self.cs.init(Pin.IN, pull=Pin.PULL_UP, value=1)
+        time.sleep_ms(1)
 
     def enable_bus(self):
         self.cs.init(Pin.OUT, value=1)
@@ -101,8 +102,7 @@ class McuBoot:
         time.sleep_us(10)
 
         self.cs.low()
-        while self.pins.miso.value() == 1:
-            time.sleep_us(1)
+        time.sleep_us(1)
         self.send_bitstream_file()
 
         time.sleep_us(100)
