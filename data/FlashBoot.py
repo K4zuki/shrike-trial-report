@@ -51,7 +51,7 @@ class FlashBoot:
 
     def getid(self):
         self.enable_bus()
-        time.sleep_us(300)
+        time.sleep_ms(1)
 
         ret = self.flash.getid()
         print([hex(b) for b in ret], file=sys.stderr)
@@ -60,7 +60,7 @@ class FlashBoot:
 
     def store(self):
         self.enable_bus()
-        time.sleep_us(300)
+        time.sleep_ms(1)
 
         self.en.low()
         self.pwr.low()
@@ -80,7 +80,7 @@ class FlashBoot:
 
     def verify(self):
         self.enable_bus()
-        time.sleep_us(300)
+        time.sleep_ms(1)
 
         flash_head = bytearray(2560)
         with open(file_name, "rb") as f:
@@ -119,6 +119,7 @@ class FlashBoot:
         for pin in self.pins:
             pin.init(Pin.IN, pull=Pin.PULL_UP, value=1)
         self.cs.init(Pin.IN, pull=Pin.PULL_UP, value=1)
+        time.sleep_ms(1)
 
     def enable_bus(self):
         self.enable_cs()
@@ -131,6 +132,7 @@ class FlashBoot:
 
     def enable_cs(self):
         self.cs.init(Pin.OUT, value=1)
+        time.sleep_ms(1)
 
     def wake_flash(self):
         self.enable_bus()
@@ -138,3 +140,4 @@ class FlashBoot:
         self.bus.write(bytearray([0xAB]))
         self.cs.high()
         self.disable_bus()
+        time.sleep_ms(1)
