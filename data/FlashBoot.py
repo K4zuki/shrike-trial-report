@@ -9,8 +9,6 @@ from spiflash import SPIFlash
 import time
 
 FLASH_IMAGE_SIZE = 45096
-MCU_IMAGE_SIZE = 46408
-
 file_name = "FPGA_bitstream_FLASH_MEM.bin"
 
 
@@ -20,7 +18,7 @@ class FlashBoot:
     en: Pin
     pwr: Pin
     flash: SPIFlash
-    pins: tuple
+    pins: BusPins
 
     def __init__(self, pins: tuple, cs: Pin, en: Pin, pwr: Pin):
         self.pins = BusPins(*pins)
@@ -50,8 +48,6 @@ class FlashBoot:
         self.enable_bus()
         time.sleep_ms(1)
 
-        self.en.low()
-        self.pwr.low()
         self.flash.erase(0, "64k")
 
         try:
