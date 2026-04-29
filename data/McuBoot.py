@@ -7,6 +7,7 @@ import binascii
 from BusPins import BusPins
 import FlashBoot
 
+MCU_IMAGE_SIZE = 46408
 file_name = 'FPGA_bitstream_MCU.bin'
 
 
@@ -16,7 +17,7 @@ class McuBoot:
     led: Pin
     en: Pin
     pwr: Pin
-    pins: tuple
+    pins: BusPins
 
     def __init__(self, pins: tuple, cs: Pin, en: Pin, pwr: Pin, led: Pin):
         self.pins = BusPins(*pins)
@@ -56,8 +57,6 @@ class McuBoot:
                     if not word:
                         break
 
-                    hex_word = binascii.hexlify(word).decode('utf-8')
-                    print(f"Send word: {hex_word}", file=sys.stderr)
                     self.bus.write(word)
                     time.sleep_us(1)
 
