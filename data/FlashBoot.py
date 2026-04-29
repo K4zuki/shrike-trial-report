@@ -1,8 +1,8 @@
 import sys
-from collections import namedtuple
 
 from machine import Pin, SPI
 
+from BusPins import BusPins
 import McuBoot
 from spiflash import SPIFlash
 
@@ -12,18 +12,6 @@ FLASH_IMAGE_SIZE = 45096
 MCU_IMAGE_SIZE = 46408
 
 file_name = "FPGA_bitstream_FLASH_MEM.bin"
-
-
-class BusPins(namedtuple("BusPins", [
-    "sclk",  # Pin
-    "mosi",  # Pin
-    "miso"  # Pin
-])):
-    """
-    - sclk: `Pin`
-    - mosi: `Pin`
-    - miso: `Pin`
-    """
 
 
 class FlashBoot:

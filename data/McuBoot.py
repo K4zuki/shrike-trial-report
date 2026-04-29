@@ -1,25 +1,13 @@
 # Engineer - Deepak Sharda - dshardam007@gmail.com
 import sys
-from collections import namedtuple
 from machine import Pin, SPI
 import time
 import binascii
 
+from BusPins import BusPins
 import FlashBoot
 
 file_name = 'FPGA_bitstream_MCU.bin'
-
-
-class BusPins(namedtuple("BusPins", [
-    "sclk",  # Pin
-    "mosi",  # Pin
-    "miso"  # Pin
-])):
-    """
-    - sclk: `Pin`
-    - mosi: `Pin`
-    - miso: `Pin`
-    """
 
 
 class McuBoot:
