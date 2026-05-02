@@ -84,11 +84,10 @@ class FlashBoot:
         self.cs.init(Pin.IN, pull=Pin.PULL_UP, value=1)
         time.sleep_ms(10)
 
-        self.en.low()
+        self.en.high()
         self.pwr.low()
         time.sleep_us(1100)
         self.pwr.high()
-        self.en.high()
         time.sleep_us(3)
         self.cs.high()
         time.sleep_us(1100)

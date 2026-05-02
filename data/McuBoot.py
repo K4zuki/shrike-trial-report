@@ -77,11 +77,10 @@ class McuBoot:
         time.sleep_ms(1)
 
         self.cs.low()
-        self.en.low()
+        self.en.high()
         self.pwr.low()
         time.sleep_ms(10)
 
-        self.en.high()
         self.pwr.high()
         time.sleep_us(3200)
 
