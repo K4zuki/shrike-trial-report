@@ -45,7 +45,9 @@ class FlashBoot:
         self.disable_bus()
 
     def store(self):
+        self.wake_flash()
         self.enable_bus()
+        self.pwr.low()
         time.sleep_ms(1)
 
         self.flash.erase(0, "64k")
@@ -61,9 +63,12 @@ class FlashBoot:
             print(f"Error: {e}")
 
         self.disable_bus()
+        self.pwr.high()
 
     def verify(self):
+        self.wake_flash()
         self.enable_bus()
+        self.pwr.low()
         time.sleep_ms(1)
 
         flash_head = bytearray(2560)
@@ -75,6 +80,7 @@ class FlashBoot:
         print(f"verify: {all([(bin == fls) for bin, fls in zip(file_head, flash_head)])}")
 
         self.disable_bus()
+        self.pwr.high()
 
     def load(self, mcuboot: McuBoot.MCUBoot):
         mcuboot.disable_bus()
