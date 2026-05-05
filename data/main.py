@@ -56,4 +56,10 @@ while True:
         mcuboot.load(flashboot)
     elif BUTTON2.value() == 0:
         flashboot.load(mcuboot)
+    elif BUTTON3.value() == 0:
+        mcuboot.disable_bus()
+        flashboot.store()
+    elif BUTTON4.value() == 0:
+        mcuboot.disable_bus()
+        flashboot.verify()
     time.sleep_ms(100)
