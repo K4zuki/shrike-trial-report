@@ -1,6 +1,6 @@
 import sys
 
-from machine import Pin, SPI
+from machine import Pin, SoftSPI
 
 from BusPins import BusPins
 import McuBoot
@@ -13,7 +13,7 @@ file_name = "FPGA_bitstream_FLASH_MEM.bin"
 
 
 class FlashBoot:
-    bus: SPI
+    bus: SoftSPI
     cs: Pin
     en: Pin
     pwr: Pin
@@ -24,10 +24,9 @@ class FlashBoot:
         self.pins = BusPins(*pins)
 
         # Initialize SPI
-        self.bus = SPI(1,
-                       sck=self.pins.sclk,
-                       mosi=self.pins.mosi,
-                       miso=self.pins.miso)
+        self.bus = SoftSPI(sck=self.pins.sclk,
+                           mosi=self.pins.mosi,
+                           miso=self.pins.miso)
 
         self.pwr = pwr
         self.en = en
@@ -115,10 +114,9 @@ class FlashBoot:
         self.enable_cs()
         self.pins.mosi.init(Pin.OPEN_DRAIN, pull=Pin.PULL_UP, value=1)
         self.pins.sclk.init(Pin.OPEN_DRAIN, pull=Pin.PULL_UP, value=1)
-        self.bus = SPI(1,
-                       sck=self.pins.sclk,
-                       mosi=self.pins.mosi,
-                       miso=self.pins.miso)
+        self.bus = SoftSPI(sck=self.pins.sclk,
+                           mosi=self.pins.mosi,
+                           miso=self.pins.miso)
 
     def enable_cs(self):
         self.cs.init(Pin.OUT, value=1)
