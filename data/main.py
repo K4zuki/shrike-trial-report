@@ -3,6 +3,7 @@ import time
 
 import machine
 
+from BusPins import BusPins
 import McuBoot
 import FlashBoot
 
@@ -34,10 +35,10 @@ MOSI0 = machine.Pin(SPI0_MOSI, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP,
 
 LED = machine.Pin(LED_PIN, machine.Pin.OUT)
 
-MISO1 = machine.Pin(SPI1_MISO, machine.Pin.IN, pull=machine.Pin.PULL_UP, value=1)
-CS1 = machine.Pin(SPI1_CS, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)
-SCLK1 = machine.Pin(SPI1_SCLK, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)
-MOSI1 = machine.Pin(SPI1_MOSI, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)
+# MISO1 = machine.Pin(SPI1_MISO, machine.Pin.IN, pull=machine.Pin.PULL_UP, value=1)
+# CS1 = machine.Pin(SPI1_CS, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)
+# SCLK1 = machine.Pin(SPI1_SCLK, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)
+# MOSI1 = machine.Pin(SPI1_MOSI, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)
 
 PWR = machine.Pin(PWR_PIN, machine.Pin.OUT, value=0)
 EN = machine.Pin(EN_PIN, machine.Pin.OUT, value=0)
@@ -47,8 +48,8 @@ BUTTON2 = machine.Pin(BUTTON2_PIN, machine.Pin.IN, pull=machine.Pin.PULL_UP, val
 BUTTON3 = machine.Pin(BUTTON3_PIN, machine.Pin.IN, pull=machine.Pin.PULL_UP, value=1)
 BUTTON4 = machine.Pin(BUTTON4_PIN, machine.Pin.IN, pull=machine.Pin.PULL_UP, value=1)
 
-mcuboot = McuBoot.McuBoot((SCLK0, MOSI0, MISO0), CS0, EN, PWR, LED)
-flashboot = FlashBoot.FlashBoot((SCLK1, MOSI1, MISO1), CS1, EN, PWR)
+mcuboot = McuBoot.McuBoot(BusPins(SCLK0, MOSI0, MISO0), CS0, EN, PWR, LED)
+flashboot = FlashBoot.FlashBoot(BusPins(SCLK0, MISO0, MOSI0), CS0, EN, PWR)
 
 while True:
     print(".", end="", file=sys.stderr)
