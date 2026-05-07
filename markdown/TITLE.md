@@ -190,7 +190,7 @@ Shrike本家リポジトリは下準備([@sec:clone-and-venv])のときにダウ
 
 ### 既存のプロジェクトを開く
 
-GoConfigure（開発環境）を起動して、["Open my file"]{.blue}ボタンから`examples/led_blink/led_blink.ffpga`を開きます。
+GoConfigure（開発環境）を起動して、["Open my file"]{.blue}ボタンから[examples/led_blink/led_blink.ffpga]{custom-style="PreprocessorTok"}を開きます。
 
 ![["Open my file"]{.blue}](images/compile-example-project-1.png){width=150mm #fig:compile-example-project-1}
 
@@ -316,14 +316,14 @@ Figure: Shrikeボードを改造する
 
 \newpage
 
-### SPIフラッシュメモリモジュールを自作する
+### SPIフラッシュメモリモジュールを自作する {#sec:craft-flash-module}
 
 [@fig:spi-flash-module-1]に自作モジュールの製作例を示します。秋月電子で売っているSPIシリアルフラッシュ
 （[SSOP8](#ref-akizuki-flash-w25q)または[SOP8](#ref-akizuki-flash-is25)）とそれぞれに適した変換基板
 （[SSOP8](#ref-akizuki-vssop8-board)・[SOP8](#ref-akizuki-sop8-board)）を[両面ユニバーサル基板Fタイプ](#ref-akizuki-ftype)
 に載せてUEWで6ピンヘッダに出すだけです。CSピンは[10K&Omega;のチップ抵抗](#ref-akizuki-10k)で3.3Vにプルアップします。
 
-モジュールのピンヘッダとShrikeのヘッダは[6P](#ref-akizuki-qi-6p)と[9P](#ref-akizuki-qi-9p)のQIコネクタでつなげます。
+モジュールのピンヘッダとShrikeのヘッダを[6P](#ref-akizuki-qi-6p)と[9P](#ref-akizuki-qi-9p)のQIコネクタでつなげます。
 
 ![自作フラッシュメモリモジュール（W25Q16JVUXIQ）](images/spi-flash-module-craft-1.png){width=120mm #fig:spi-flash-module-1}
 
@@ -348,17 +348,13 @@ flashboot = FlashBoot.FlashBoot(BusPins(SCLK1, MOSI1, MISO1), CS1, EN, PWR)  # u
 
 Listing: main.py {#lst:main-py-spi1}
 
-`flashboot.load(mcuboot)`{.python}でフラッシュからのロードが実行されます。
+MicroPythonのREPL上で[flashboot.load(mcuboot)]{custom-style="PreprocessorTok"}を打ち込むとフラッシュからのロードが実行されます。
 
 ## Shrikeボードを改造する（2）
 
 改造例（１）と同様にテストパッドからUEWで配線を引き伸ばし、SPIフラッシュに接続します。CSピンだけはプルアップが必要ですが、ほかは
-直結で大丈夫です。変換基板は耐熱両面テープでMCUに固定します。
-
-### SPIフラッシュとテストパッドを直結する
-
-秋月で売っている0.1mm厚SOP8変換基板またはSMDプロトタイプ基板を１０〜１２ミリ角に小さく切り出してフラッシュROMを実装します。
-そこからテストパッドと3.3V電源にワイヤを繋げれば終わりです。FPGAがマスタとして正しくロードできるように、配線には注意が必要です。
+直結で大丈夫です。変換基板は裏面を絶縁したあとで[カプトン両面テープ](#ref-monotaro-capton-double-side-tape)などの耐熱両面テープでMCUに固定します。
+電源はMCU用のフラッシュメモリのピンにつなげました。
 
 ### フラッシュ書き込み
 
@@ -432,7 +428,7 @@ Listing: main.py {#lst:main-py-spi1}
 ## 関連部品リスト {-}
 
 - <https://www.renesas.com/ja/products/at25xe011>
-- オヤイデ電気/UEW 0.18mm 20m ボビン巻き
+- [オヤイデ電気/UEW 0.18mm 20m ボビン巻き]{#ref-oyaide-uew}
     - <https://shop.oyaide.com/products/uew0-18-20m.html>
 - [スイッチサイエンス/2MバイトSPIシリアルフラッシュメモリブレークアウト基板（レベルシフト回路搭載）]{#ref-ssci-flash-w25q}
     - <https://www.switch-science.com/products/8593>
