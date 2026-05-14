@@ -14,10 +14,10 @@ SPI0_MOSI = 3
 
 LED_PIN = 4
 
-SPI1_MISO = 8
-SPI1_CS = 9
-SPI1_SCLK = 10
-SPI1_MOSI = 11
+# SPI1_MISO = 8  # V1.0-R0.4
+# SPI1_CS = 9  # V1.0-R0.4
+# SPI1_SCLK = 10  # V1.0-R0.4
+# SPI1_MOSI = 11  # V1.0-R0.4
 
 PWR_PIN = 12
 EN_PIN = 13
@@ -35,10 +35,10 @@ MOSI0 = machine.Pin(SPI0_MOSI, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP,
 
 LED = machine.Pin(LED_PIN, machine.Pin.OUT)
 
-# MISO1 = machine.Pin(SPI1_MISO, machine.Pin.IN, pull=machine.Pin.PULL_UP, value=1)
-# CS1 = machine.Pin(SPI1_CS, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)
-# SCLK1 = machine.Pin(SPI1_SCLK, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)
-# MOSI1 = machine.Pin(SPI1_MOSI, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)
+# MISO1 = machine.Pin(SPI1_MISO, machine.Pin.IN, pull=machine.Pin.PULL_UP, value=1)  # V1.0-R0.4
+# CS1 = machine.Pin(SPI1_CS, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)  # V1.0-R0.4
+# SCLK1 = machine.Pin(SPI1_SCLK, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)  # V1.0-R0.4
+# MOSI1 = machine.Pin(SPI1_MOSI, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)  # V1.0-R0.4
 
 PWR = machine.Pin(PWR_PIN, machine.Pin.OUT, value=0)
 EN = machine.Pin(EN_PIN, machine.Pin.OUT, value=0)
@@ -49,7 +49,8 @@ BUTTON3 = machine.Pin(BUTTON3_PIN, machine.Pin.IN, pull=machine.Pin.PULL_UP, val
 BUTTON4 = machine.Pin(BUTTON4_PIN, machine.Pin.IN, pull=machine.Pin.PULL_UP, value=1)
 
 mcuboot = McuBoot.McuBoot(BusPins(SCLK0, MOSI0, MISO0), CS0, EN, PWR, LED)
-flashboot = FlashBoot.FlashBoot(BusPins(SCLK0, MISO0, MOSI0), CS0, EN, PWR)
+# flashboot = FlashBoot.FlashBoot(BusPins(SCLK1, MOSI1, MISO1), CS1, EN, PWR)  # V1.0-R0.4
+flashboot = FlashBoot.FlashBoot(BusPins(SCLK0, MISO0, MOSI0), CS0, EN, PWR)  # V1.0-R0.5
 
 while True:
     print(".", end="", file=sys.stderr)
