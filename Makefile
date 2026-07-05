@@ -19,7 +19,7 @@ PROJECT= `pwd`
 #DOCXFRONTPAGE := frontpage.md
 TARGET := ShrikeFPGA-Trial-Report-$(DATE)-$(HASH)
 #REVERSE_INPUT := reverse-input.docx
-#REFERENCE := $(MISC)/ref.docx
+REFERENCE := ./local-reference.docx
 HTML_TEMPLATE := ./easy-pandoc-templates/html/easy_template.html
 #HTML_CSS := -M css=$(MISC_SYS)/github_css/github.css
 ##
