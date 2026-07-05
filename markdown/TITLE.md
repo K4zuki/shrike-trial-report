@@ -181,6 +181,8 @@ SPIバスのCSの状態によって外部マスタ(MCUなど)のデータを受�
 まとめると、[CSをLにしながらPWRを上げるとMCUロード、CSをHにプルアップしてPWRを上げるとフラッシュロード]{.underline}を行います。
 LにするときはMCUがCSを操作、フラッシュロードのときはCSをハイインピーダンス（入力）にすれば済みます。
 
+:::rmnote
+
 \newpage
 
 | The SLG47910 device is configured using a single data pin (SPI_SI).
@@ -192,6 +194,8 @@ LにするときはMCUがCSを操作、フラッシュロードのときはCSを
 | The Config-Circuit sends a wake-up command (0xAB) to the SPI flash device first and then it sends a fast read
 | command (0x0B).
 | The Config-Circuit will generate an internal Config signal, Done = 1.
+
+:::
 
 # サンプルプロジェクトをコンパイルしてみる
 
@@ -265,7 +269,7 @@ total 448
 
 \newpage
 
-# FPGAのブート：マイコンから毎度書き込む（SPIスレーブモード）
+# マイコンから毎度書き込む（SPIスレーブモード）
 
 RP2040から直接FPGAバイナリを転送します。ボードの改造は不要です。
 
@@ -305,7 +309,7 @@ MicroPythonのREPL上で[mcuboot.load(flashboot)]{custom-style="PreprocessorTok"
 [flashboot]{custom-style="PreprocessorTok"}は[FlashBoot.py]{custom-style="PreprocessorTok"}のインスタンスです。
 main.pyの中で宣言されています。SPIバスの切り替えのためMCUとフラッシュで互いのインスタンスを呼ぶ実装になっています。
 
-# FPGAのブート：SPIフラッシュから読み込む（SPIマスターモード）
+# SPIフラッシュから読み込む（SPIマスターモード）
 
 ## FPGAバイナリ（フラッシュロード用）を転送
 
@@ -359,7 +363,7 @@ Shrikeボードを改造する
 
 \newpage
 
-![ハーネス作成例](images/ssci-spi-flash-module-harness-example.png){width=150mm #fig:ssci-flash-module-harness-example}
+![購入したモジュール(改造後のすがた)](images/ssci-spi-flash-module-harness-example.png){width=90mm #fig:ssci-flash-module-harness-example}
 
 #### 自作する場合
 
@@ -370,12 +374,15 @@ Shrikeボードを改造する
 
 モジュールのピンヘッダとShrikeのヘッダを[6P](#ref-akizuki-qi-6p)と[9P](#ref-akizuki-qi-9p)のQIコネクタでつなげます。
 
-![自作フラッシュメモリモジュール（W25Q16JVUXIQ）](images/spi-flash-module-craft-1.png){width=120mm #fig:spi-flash-module-1}
+![自作フラッシュメモリモジュール（W25Q16JVUXIQ）](images/spi-flash-module-craft-1.png){width=85mm #fig:spi-flash-module-1}
+
+\newpage
 
 ### フラッシュ書き込み・ロード・ベリファイ {#sec:flash-store-load-verify-1}
 
 RP2040からフラッシュに書き込むときは、SPI1バスを使用します。[main.py]{custom-style="PreprocessorTok"}に
-変更を加える必要があります。全文は[あとの章](#main-py-wholecode)にあります。
+変更を加える必要があります（変更後もう一度アップロードしてください）。
+[main.py]{custom-style="PreprocessorTok"}の全文は[あとの章](#main-py-wholecode)にあります。
 
 ```{.python}
 MISO1 = machine.Pin(SPI1_MISO, machine.Pin.IN, pull=machine.Pin.PULL_UP, value=1)  # uncomment
@@ -403,6 +410,8 @@ MicroPythonのREPL上で[flashboot.store()]{custom-style="PreprocessorTok"}でMC
 CSピンだけはリセット解除後Hに保ちたいので抵抗を介したプルアップが必要ですが、ほかは
 直結で大丈夫です。変換基板は裏面を絶縁したあとで[カプトン両面テープ](#ref-monotaro-capton-double-side-tape)などの耐熱両面テープでMCUに固定します。
 電源は3.3Vにつなぎます。作例ではMCU用のフラッシュメモリのピンにつなげました。
+
+\newpage
 
 ::: {#fig:onboard-flash-mod1}
 
@@ -448,13 +457,13 @@ ValueError: bad MOSI pin
 ```
 
 これは仕様なので、別のアプローチをします。任意のIOピンを操作してSPIマスタにできる`SoftSPI`クラス
-を利用して、MOSI・MISOを入れ替えます。
+を利用して、MOSI・MISOを入れ替えます（[@fig:spi-bus-collision]）。
 
-![SPIバス衝突を受け入れる](images/spi-bus-collision.png){width=120mm #fig:spi-bus-collision}
+![MSU品を追加せずにSPIバスのMOSI・MISOを入れ替える](images/spi-bus-collision.png){width=120mm #fig:spi-bus-collision}
 
 ### フラッシュ書き込み・ロード・ベリファイ
 
-[@#sec:flash-store-load-verify-1]と同じ操作で書き込み・ロード・ベリファイを行います。
+[@sec:flash-store-load-verify-1]と同じ操作で書き込み・ロード・ベリファイを行います。
 SoftSPIバスを使うので、[main.py]{custom-style="PreprocessorTok"}の編集は不要です。
 
 # 関連コード全文掲載シリーズ {.appendix}
@@ -570,3 +579,4 @@ SoftSPIバスを使うので、[main.py]{custom-style="PreprocessorTok"}の編�
 - MouserでSLG47910Vを怒りのフルリール購入したけど夏コミには間に合いませんでした。そういうとこやぞ&reg;
     - ６月初旬時点では単価３８０円くらいでした。「あなた専用にしか売らないしキャンセルもできませんよ」と念書を書かされました。
       なお総額がとんでもなくなって仕方なくカードの利用枠を増額しました。
+- 表記揺れはご容赦ください
