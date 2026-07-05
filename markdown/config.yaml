@@ -1,6 +1,6 @@
 ---
 title: 「Shrike」FPGAボード試してみたレポート
-subtitle: 専用ライター不要！MCU書込み式FPGAボード
+subtitle: 専用ライターいらずのマイコンFPGAボード
 circle: KY技研
 author: K4zuki
 comiket: C108
@@ -15,7 +15,7 @@ docrevision: "1.0"
 #  - angle=0
 
 verbcolored: false
-# rmnote: false
+rmnote: true
 #toc-title: "Table of Contents"
 
 svgbob:
