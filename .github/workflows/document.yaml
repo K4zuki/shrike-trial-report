@@ -66,10 +66,10 @@ jobs:
           cd artifact
           ../docx2pdf/docx2pdf.ps1
       - name: Make a release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
+        permissions:
+          contents: write
         with:
-          permissions:
-            contents: write
           files: |
             artifact/*.html
             artifact/*.pdf
