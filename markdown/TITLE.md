@@ -153,7 +153,7 @@ RP2040とRP2350はパッケージが異なるのでICだけ載せ替えはでき
 \newpage
 
 Raspberry Pi Pico（ラズピコ）相当の回路が載っています。UF2ファームウェアもラズピコ用が使えます。GPIO0～3（SPI0バス）と
-12～15（EN・PWR・汎用2本）がFPGAと直結されています（[@fig:shrike-pinout]）。
+12～15（EN・PWR・I2C1バス）がFPGAと直結されています（[@fig:shrike-pinout]）。
 また、GPIO4が汎用出力としてLEDにつながっています。Hにすると点灯します。
 
 ## SLG34970（FPGA）
@@ -180,6 +180,7 @@ SPIバスのCSの状態によって外部マスタ(MCUなど)のデータを受�
 
 まとめると、[CSをLにしながらPWRを上げるとMCUロード、CSをHにプルアップしてPWRを上げるとフラッシュロード]{.underline}を行います。
 LにするときはMCUがCSを操作、フラッシュロードのときはCSをハイインピーダンス（入力）にすれば済みます。
+フラッシュに書き込みたいときはPWRまたはENをLにします。
 
 :::rmnote
 
@@ -307,7 +308,7 @@ mpremote connect <COM port> cp FPGA_bitstream_MCU.bin :
 
 MicroPythonのREPL上で[mcuboot.load(flashboot)]{custom-style="PreprocessorTok"}を打ち込むとMCUからのロードが実行されます。
 [flashboot]{custom-style="PreprocessorTok"}は[FlashBoot.py]{custom-style="PreprocessorTok"}のインスタンスです。
-main.pyの中で宣言されています。SPIバスの切り替えのためMCUとフラッシュで互いのインスタンスを呼ぶ実装になっています。
+[main.py]{custom-style="PreprocessorTok"}の中で宣言されています。SPIバスの切り替えのためMCUとフラッシュで互いのインスタンスを呼ぶ実装になっています。
 
 # SPIフラッシュから読み込む（SPIマスターモード）
 
