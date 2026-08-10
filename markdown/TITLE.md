@@ -461,6 +461,8 @@ SoftSPIバスを使うので、[main.py]{custom-style="PreprocessorTok"}の編�
 
 [`McuBoot.py`](data/McuBoot.py){.python #lst:mcuboot-py .listingtable nocaption=true}
 
+\newpage
+
 ## `FlashBoot.py` {-}
 
 [`FlashBoot.py`](data/FlashBoot.py){.python #lst:flashboot-py .listingtable nocaption=true}
@@ -472,8 +474,6 @@ SoftSPIバスを使うので、[main.py]{custom-style="PreprocessorTok"}の編�
 ## [`main.py`]{#main-py-wholecode} {-}
 
 [`main.py`](data/main.py){.python #lst:main-py .listingtable nocaption=true}
-
-\newpage
 
 ## `shrike/examples/led_blink/ffpga/src/main.v` {-}
 
