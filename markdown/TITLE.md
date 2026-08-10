@@ -527,11 +527,11 @@ SoftSPIバスを使うので、[main.py]{custom-style="PreprocessorTok"}の編�
         - <https://www.winbond.com/hq/product/code-storage-flash/qspi-nor/w25q-jv/?__locale=en&partNo=W25Q16JVSSIQ>
 - [秋月電子/\[106076\]フラッシュメモリー W25Q16JVUXIQ]{#ref-akizuki-flash-w25q}
     - 16Mbit
-    - https://akizukidenshi.com/catalog/g/g117346/
+    - <https://akizukidenshi.com/catalog/g/g117346/>
     - Winbond/W25Q16JVUXIQ 16Mbit USON8
         - <https://www.winbond.com/hq/product/code-storage-flash/qspi-nor/w25q-jv/?__locale=en&partNo=W25Q16JVUXIQ>
 - [秋月電子/VSSOP8 0.5mmピッチIC(8ピン)変換基板]{#ref-akizuki-vssop8-board}
-    - https://akizukidenshi.com/catalog/g/g106076/
+    - <https://akizukidenshi.com/catalog/g/g106076/>
 - [秋月電子/\[118046\]フラッシュメモリー IS25LP040E]{#ref-akizuki-flash-is25}
     - 4Mbit
     - <https://akizukidenshi.com/catalog/g/g118046/>
