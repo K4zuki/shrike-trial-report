@@ -344,11 +344,10 @@ MCUロード時に影響しないように、ピンヘッダ側に100オーム�
 これを4本繰り返したあとにそれぞれに予備ハンダしてからパッドにつけます。山盛りのハンダに予備ハンダしたUEW線を差し込む感じにするとスムーズです。
 顕微鏡やマイクロスコープがあると作業に便利です。器用な人はラジオペンチでテストパッド側を0.5ミリくらい潰して平たくすると予備ハンダが少し楽になります。
 
-::: {#fig:board-mod-examples}
+::: {#fig:board-mod-examples .figurediv col=2}
 
-![接続図](images/board-mod-plan.jpg){height=120mm #fig:board-mod-examples-1}
-
-![実装例](images/board-mod-example.jpg){height=120mm #fig:board-mod-examples-2}
+![接続図](images/board-mod-plan.jpg){height=60mm #fig:board-mod-examples-1}
+![実装例](images/board-mod-example.jpg){height=60mm #fig:board-mod-examples-2}
 
 Shrikeボードを改造する
 :::
@@ -414,31 +413,16 @@ CSピンだけはリセット解除後Hに保ちたいので抵抗を介した�
 
 \newpage
 
-::: {#fig:onboard-flash-mod1}
+::: {#fig:onboard-flash-mod .figurediv col=2}
 
-![変換基板表面](images/onboard-flash-mod-1.png){#fig:onboard-flash-mod1-1 height=60mm}
+![変換基板表面](images/onboard-flash-mod-1.png){#fig:onboard-flash-mod-1 height=50mm}
+![変換基板裏面](images/onboard-flash-mod-2.png){#fig:onboard-flash-mod-2 height=50mm}
+![MCUに固定](images/onboard-flash-mod-3.png){#fig:onboard-flash-mod2-3 height=50mm}
+![線を引き延ばす](images/onboard-flash-mod-4.png){#fig:onboard-flash-mod2-4 height=50mm}
+![テストパッドにつなげる](images/onboard-flash-mod-5.png){#fig:onboard-flash-mod3-5 height=50mm}
+![別アングル](images/onboard-flash-mod-6.png){#fig:onboard-flash-mod3-6 height=50mm}
 
-![変換基板裏面](images/onboard-flash-mod-2.png){#fig:onboard-flash-mod1-2 height=60mm}
-
-オンボードフラッシュ改造（１）
-:::
-
-::: {#fig:onboard-flash-mod2}
-
-![MCUに固定](images/onboard-flash-mod-3.png){#fig:onboard-flash-mod2-3 height=90mm}
-
-![線を引き延ばす](images/onboard-flash-mod-4.png){#fig:onboard-flash-mod2-4 height=90mm}
-
-オンボードフラッシュ改造（２）
-:::
-
-::: {#fig:onboard-flash-mod3}
-
-![テストパッドにつなげる](images/onboard-flash-mod-5.png){#fig:onboard-flash-mod3-5 height=90mm}
-
-![別アングル](images/onboard-flash-mod-6.png){#fig:onboard-flash-mod3-6 height=90mm}
-
-オンボードフラッシュ改造（３）
+オンボードフラッシュ改造
 :::
 
 \newpage
