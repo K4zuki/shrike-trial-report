@@ -394,15 +394,6 @@ RP2040からフラッシュに書き込むときは、SPI1バスを使用しま�
 [main.py]{custom-style="PreprocessorTok"}の全文は[あとの章](#main-py-wholecode)にあります。
 
 ```{.python}
-MISO1 = machine.Pin(SPI1_MISO, machine.Pin.IN, pull=machine.Pin.PULL_UP, value=1)  # uncomment
-CS1 = machine.Pin(SPI1_CS, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)  # uncomment
-SCLK1 = machine.Pin(SPI1_SCLK, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)  # uncomment
-MOSI1 = machine.Pin(SPI1_MOSI, machine.Pin.OPEN_DRAIN, pull=machine.Pin.PULL_UP, value=1)  # uncomment
-:
-:
-:
-:
-mcuboot = McuBoot.McuBoot(BusPins(SCLK0, MOSI0, MISO0), CS0, EN, PWR, LED)
 flashboot = FlashBoot.FlashBoot(BusPins(SCLK1, MOSI1, MISO1), CS1, EN, PWR)  # uncomment
 # flashboot = FlashBoot.FlashBoot(BusPins(SCLK0, MISO0, MOSI0), CS0, EN, PWR)  # comment out
 ```
