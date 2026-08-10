@@ -365,7 +365,7 @@ Shrikeボードを改造する
 
 \newpage
 
-![購入したモジュール(改造後のすがた)](images/ssci-spi-flash-module-harness-example.png){width=90mm #fig:ssci-flash-module-harness-example}
+![購入したモジュール(改造後のすがた)](images/ssci-spi-flash-module-harness-example.png){width=85mm #fig:ssci-flash-module-harness-example}
 
 #### 自作する場合
 
