@@ -212,7 +212,14 @@ GPIO16につながっているLEDを点滅させます（1秒間点灯・1秒間
 
 Shrike本家リポジトリは下準備([@sec:clone-and-venv])のときにダウンロードされているはずです。
 
-![原稿リポジトリ構造](images/shrike-submodule-structure.png){height=125mm #fig:submodule-structure}
+::: {#fig:submodule-structure .figurediv col=2}
+
+![全体像](images/shrike-submodule-structure.png){height=100mm #fig:submodule-structure-1}
+
+![サンプルプロジェクト](images/shrike-example-projects.png){height=100mm #fig:submodule-structure-2}
+
+Shrikeリポジトリ構造
+:::
 
 \newpage
 
