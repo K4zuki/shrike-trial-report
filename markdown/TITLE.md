@@ -144,6 +144,8 @@ RP2040とRP2350はパッケージが異なるのでICだけ載せ替えはでき
 
 ## RP2040（マイコン）
 
+いわずと知れた、ラズペリーパイ財団のデュアルコアARMマイコンです。プログラム領域のためのフラッシュROM（W25Q32）が外付けされています。
+
 > MCU-FPGA間のピン対応表がヘルプページに用意されています。抜粋するので、参考にしてください。
 > <https://vicharak-in.github.io/shrike/shrike_pinouts.html#fpga-cpu-interconnect-pin-outs>
 >
