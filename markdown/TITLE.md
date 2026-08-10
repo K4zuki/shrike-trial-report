@@ -510,9 +510,9 @@ SoftSPIバスを使うので、[main.py]{custom-style="PreprocessorTok"}の編�
 - [SPIフラッシュ読み書きスクリプト]{#ref-spi-flash-handler}
     - <https://github.com/SpotlightKid/micropython-stm-lib/blob/master/spiflash/spiflash.py>
 - [過去作 #1]{#ref-forgefpga-trial-report-1}
-    - https://github.com/K4zuki/forgefpga-trial-report/releases/tag/c104.rc7
+    - <https://github.com/K4zuki/forgefpga-trial-report/releases/tag/c104.rc7>
 - [過去作 #2]{#ref-forgefpga-trial-report-2}
-    - https://github.com/K4zuki/forgefpga-trial-report/releases/tag/c105.rc4
+    - <https://github.com/K4zuki/forgefpga-trial-report/releases/tag/c105.rc4>
 
 \newpage
 
@@ -536,7 +536,7 @@ SoftSPIバスを使うので、[main.py]{custom-style="PreprocessorTok"}の編�
     - 4Mbit
     - <https://akizukidenshi.com/catalog/g/g118046/>
 - [秋月電子/\[105154\]SOP8(1.27mm)DIP変換基板 金フラッシュ]{#ref-akizuki-sop8-board}
-    - https://akizukidenshi.com/catalog/g/g105154/
+    - <https://akizukidenshi.com/catalog/g/g105154/>
 - [秋月電子/\[130347\]チップ抵抗 1608 1/8W100&Omega;]{#ref-akizuki-100r}
     - <https://akizukidenshi.com/catalog/g/g130347/>
 - [秋月電子/\[130355\]チップ抵抗 1608 1/10W10k&Omega;]{#ref-akizuki-10k}
