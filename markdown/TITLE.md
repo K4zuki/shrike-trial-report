@@ -394,7 +394,7 @@ RP2040からフラッシュに書き込むときは、SPI1バスを使用しま�
 変更を加える必要があります（変更後もう一度アップロードしてください）。
 [main.py]{custom-style="PreprocessorTok"}の全文は[あとの章](#main-py-wholecode)にあります。
 
-```{.python}
+```{.python from=55 to=56}
 flashboot = FlashBoot.FlashBoot(BusPins(SCLK1, MOSI1, MISO1), CS1, EN, PWR)  # uncomment
 # flashboot = FlashBoot.FlashBoot(BusPins(SCLK0, MISO0, MOSI0), CS0, EN, PWR)  # comment out
 ```
