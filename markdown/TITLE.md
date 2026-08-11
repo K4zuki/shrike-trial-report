@@ -195,7 +195,7 @@ MCUロードシーケンスの詳細が、旧リビジョンのコンフィグ�
 > the host keeps `SPI_SS` LOW and continue to send `SPI_SCK`s (POSTAMBLE) until it sees the `CONFIG` signal go
 > HIGH.
 
-![MCUロードタイミング(旧版ドキュメントより抜粋)](images/mcu-load-detailed-timing.png){#fig:mcu-load-detailed-timing width=100mm .figurediv}
+![MCUロードタイミング(旧版ドキュメントより抜粋)](images/mcu-load-detailed-timing.png){#fig:mcu-load-detailed-timing width=150mm}
 
 上記によるとビットストリームの前後に同期用信号を足しなさいと書かれていますが、この部分は開発ソフトの更新に伴い自動生成されるようになったので、
 エンドユーザーは気にしなくて良くなったようです。
@@ -445,7 +445,7 @@ ValueError: bad MOSI pin
 これは仕様なので、別のアプローチをします。任意のIOピンを操作してSPIマスタにできる`SoftSPI`クラス
 を利用して、MOSI・MISOを入れ替えます（[@fig:spi-bus-collision]）。
 
-![MSUピンを追加せずにSPIバスのMOSI・MISOを入れ替える](images/spi-bus-collision.png){width=120mm #fig:spi-bus-collision}
+![MCUピンを追加せずにSPIバスのMOSI・MISOを入れ替える](images/spi-bus-collision.png){height=65mm #fig:spi-bus-collision}
 
 ### フラッシュ書き込み・ロード・ベリファイ
 
