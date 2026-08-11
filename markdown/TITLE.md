@@ -178,7 +178,7 @@ PWRが1（H）ならば強制OTPロードフラグの状態を調べ、フラグ
 SPIバスのCSの状態によって外部マスタ(MCUなど)のデータを受けるスレーブモードか、SPIフラッシュROMの内容を読み出すマスタモードかを選びます。
 なお、ENピンの状態はロード元選択に寄与しないので、用がなければHに吊っておきます。
 
-![起動シーケンス（SLG47910データシート抜粋）](images/slg47910-configuration-sequence.png){width=95mm #fig:configuration-sequence}
+![起動シーケンス（SLG47910データシート抜粋）](images/slg47910-configuration-sequence.png){width=80mm #fig:configuration-sequence}
 
 まとめると、[CSをLにしながらPWRを上げるとMCUロード、CSをHにプルアップしてPWRを上げるとフラッシュロード]{.underline}を行います。
 LにするときはMCUがCSを操作、フラッシュロードのときはCSをハイインピーダンス（入力）にすれば済みます。
