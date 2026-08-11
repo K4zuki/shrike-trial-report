@@ -50,7 +50,7 @@ Shrike Lite本体のリビジョンは1月入荷版の**V1.0 R0.4**を対象に�
 3.7以降ならどのバージョンでもいいです。[winget]{custom-style="PreprocessorTok"}やストア経由でインストールしてください。
 すでに入っているなら追加する必要はありません。以下コマンド例：
 
-```{.bash .unnumbered}
+```{.bash}
 winget install Python.Python.3.14
 ```
 
@@ -85,7 +85,7 @@ Micropythonの公式ページから[ラズピコ用UF２ファームウェア](h
 をダウンロードします。どのバージョンでもいいと思いますが、とりあえず執筆時点の最新版`RPI_PICO-20260406-v1.28.0.uf2`にしました。
 ShrikeのBOOTボタンを押しながらRSTを押すか、[mpremote]{custom-style="PreprocessorTok"}でブートローダを起動します。
 
-```{.bash .unnumbered}
+```{.bash}
 mpremote connect <COM port> bootloader
 ```
 
@@ -326,7 +326,7 @@ MicroPythonのREPL上で[mcuboot.load(flashboot)]{custom-style="PreprocessorTok"
 [@sec:build-bitstream]でビルドしたビットストリームファイル[FPGA_bitstream_FLASH_MEM.bin]{custom-style="PreprocessorTok"}を
 デバイスにコピーします。
 
-```{.bash .unnumbered}
+```{.bash}
 cd shrike/examples/led_blink/ffpga/build/bitstream
 mpremote connect <COM port> cp FPGA_bitstream_FLASH_MEM.bin :
 ```
