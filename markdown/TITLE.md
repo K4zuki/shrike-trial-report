@@ -307,17 +307,17 @@ cd shrike/examples/led_blink/ffpga/build/bitstream
 mpremote connect <COM port> cp FPGA_bitstream_MCU.bin :
 ```
 
-## 転送スクリプト
-
-工場出荷ファームウェア内に埋め込まれている*と思われる*スクリプトを示します。
-
-[スクリプト例（本家GitHubより抜粋）](shrike/archive/shrike_micropy/shrike_fpga.py){.listingtable .python}
-
 ## ロード手順
 
 MicroPythonのREPL上で[mcuboot.load(flashboot)]{custom-style="PreprocessorTok"}を打ち込むとMCUからのロードが実行されます。
 [flashboot]{custom-style="PreprocessorTok"}は[FlashBoot.py]{custom-style="PreprocessorTok"}のインスタンスです。
 [main.py]{custom-style="PreprocessorTok"}の中で宣言されています。SPIバスの切り替えのためMCUとフラッシュで互いのインスタンスを呼ぶ実装になっています。
+
+## 転送スクリプト(参考用)
+
+工場出荷ファームウェア内に埋め込まれている*と思われる*スクリプトを示します。タイミング図のとおりにピンを操作しているのがわかります。
+
+[スクリプト例（本家GitHubより抜粋）](shrike/archive/shrike_micropy/shrike_fpga.py){.listingtable .python}
 
 # SPIフラッシュから読み込む（SPIマスターモード）
 
