@@ -491,6 +491,11 @@ SoftSPIバスを使うので、[main.py]{custom-style="PreprocessorTok"}の編�
         - <https://github.com/vicharak-in/shrike/releases/tag/v1.0.0>
     - ドキュメントページ
         - <https://vicharak-in.github.io/shrike/>
+- [Vicharak通販サイト]{#ref-vicharak-ec}
+    - Shrike Lite 商品ページ
+        - <https://store.vicharak.in/?product=shrike&post_type=product&name=shrike&v=55add3d845bf>
+    - FPGA石 商品ページ
+        - <https://store.vicharak.in/?product=renesas-forgefpga-slg47910v&v=55add3d845bf>
 - [ルネサス/Configuration guide]{#ref-configuration-guide}
     - <https://www.renesas.com/ja/document/mah/forgefpga-configuration-guide>
     - R19US0005EU0250 Rev.2.5 / Jan 28, 2026
