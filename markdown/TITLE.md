@@ -129,7 +129,7 @@ RP2040とRP2350はパッケージが異なるのでICだけ載せ替えはでき
 
 ## 入手したくなったら
 
-本家直販または秋月電子通商から購入できます。5月に秋月に再入荷したものは以前とはリビジョンが異なるので注意が必要です。
+[本家直販](#ref-vicharak-ec)または[秋月電子通商](#ref-akizuki-shrike)から購入できます。5月に秋月に再入荷したものは以前とはリビジョンが異なるので注意が必要です。
 先述の通り、この本では旧リビジョン**V1.0 R0.4**を対象にします。
 
 ## 電源
@@ -315,7 +315,8 @@ MicroPythonのREPL上で[mcuboot.load(flashboot)]{custom-style="PreprocessorTok"
 
 ## 転送スクリプト(参考用)
 
-工場出荷ファームウェア内に埋め込まれている*と思われる*スクリプトを示します。タイミング図のとおりにピンを操作しているのがわかります。
+工場出荷ファームウェア内に埋め込まれている*と思われる*スクリプトを示します。タイミング図([@fig:mcu-load-detailed-timing])
+のとおりにピンを操作しているのがわかります。
 
 [スクリプト例（本家GitHubより抜粋）](shrike/archive/shrike_micropy/shrike_fpga.py){.listingtable .python}
 
@@ -522,8 +523,10 @@ SoftSPIバスを使うので、[main.py]{custom-style="PreprocessorTok"}の編�
 
 ## 関連部品リスト {-}
 
-- [ルネサス/1Mビットフラッシュメモリ AT25XE011]{#ref-at25xe011-flash}
+- [ルネサス/SPIフラッシュメモリ AT25XE011]{#ref-at25xe011-flash}
+    - 1Mbit
     - <https://www.renesas.com/ja/products/at25xe011>
+    - <https://www.digikey.jp/ja/products/detail/renesas-electronics-corporation/AT25XE011-SSHN-T/5037205>
 - [オヤイデ電気/UEW 0.18mm 20m ボビン巻き]{#ref-oyaide-uew}
     - <https://shop.oyaide.com/products/uew0-18-20m.html>
 - [スイッチサイエンス/2MバイトSPIシリアルフラッシュメモリブレークアウト基板（レベルシフト回路搭載）]{#ref-ssci-flash-w25q}
@@ -560,8 +563,10 @@ SoftSPIバスを使うので、[main.py]{custom-style="PreprocessorTok"}の編�
     - <https://akizukidenshi.com/catalog/g/g117982/>
 - [秋月電子/\[112268\]超薄型SOP8変換基板]{#ref-akizuki-sop8-1mm-10p}
     - <https://akizukidenshi.com/catalog/g/g112268/>
-- [モノタロウ/カプトン両面テープ NO.760H #25]{#ref-monotaro-capton-double-side-tape}
+- [モノタロウ/カプトン両面テープ NO.760H #25 | 幅5mm長さ20m]{#ref-monotaro-capton-double-side-tape-5mm}
     - <https://www.monotaro.com/p/7518/1574/>
+- [モノタロウ/カプトン両面テープ NO.760H #25 | 幅10mm長さ20m]{#ref-monotaro-capton-double-side-tape-10mm}
+    - <https://www.monotaro.com/p/7518/1583/>
 
 # あとがき {-}
 
