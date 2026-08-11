@@ -522,7 +522,8 @@ SoftSPIバスを使うので、[main.py]{custom-style="PreprocessorTok"}の編�
 
 ## 関連部品リスト {-}
 
-- <https://www.renesas.com/ja/products/at25xe011>
+- [ルネサス/1Mビットフラッシュメモリ AT25XE011]{#ref-at25xe011-flash}
+    - <https://www.renesas.com/ja/products/at25xe011>
 - [オヤイデ電気/UEW 0.18mm 20m ボビン巻き]{#ref-oyaide-uew}
     - <https://shop.oyaide.com/products/uew0-18-20m.html>
 - [スイッチサイエンス/2MバイトSPIシリアルフラッシュメモリブレークアウト基板（レベルシフト回路搭載）]{#ref-ssci-flash-w25q}
