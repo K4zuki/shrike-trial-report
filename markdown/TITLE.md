@@ -498,6 +498,7 @@ SoftSPIバスを使うので、[main.py]{custom-style="PreprocessorTok"}の編�
         - <https://store.vicharak.in/?product=renesas-forgefpga-slg47910v&v=55add3d845bf>
 - [ルネサス/Configuration guide]{#ref-configuration-guide}
     - <https://www.renesas.com/ja/document/mah/forgefpga-configuration-guide>
+    - R19UZ0005EU0101 Rev.1.01 / Jul 23, 2024
     - R19US0005EU0250 Rev.2.5 / Jan 28, 2026
 - [ルネサス/SLG47910 Datasheet]{#ref-slg47910-datasheet}
     - <https://www.renesas.com/ja/document/dst/slg47910-datasheet?r=25546631>
