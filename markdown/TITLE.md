@@ -369,11 +369,13 @@ Shrikeボードを改造する
 筆者はスイッチサイエンスで販売している[SPIシリアルフラッシュメモリブレークアウト基板](#ref-ssci-flash-w25q)を購入し、
 [7P](#ref-akizuki-qi-7p)と[9P](#ref-akizuki-qi-9p)のQIコネクタでハーネスを作ってつなげました。
 
-![スイッチサイエンス販売ページ](images/ssci-flash-module-page.png){width=150mm #fig:ssci-flash-module-page}
+::: {#fig:ssci-flash-module .figurediv col=2}
+![スイッチサイエンス販売ページ](images/ssci-flash-module-page.png){height=45mm #fig:ssci-flash-module-1}
 
-\newpage
+![改造後のすがた](images/ssci-spi-flash-module-harness-example.png){height=45mm #fig:ssci-flash-module-2}
 
-![購入したモジュール(改造後のすがた)](images/ssci-spi-flash-module-harness-example.png){width=85mm #fig:ssci-flash-module-harness-example}
+SPIシリアルフラッシュメモリブレークアウト基板
+:::
 
 #### 自作する場合
 
