@@ -181,21 +181,24 @@ SPIバスのCSの状態によって外部マスタ(MCUなど)のデータを受�
 LにするときはMCUがCSを操作、フラッシュロードのときはCSをハイインピーダンス（入力）にすれば済みます。
 フラッシュに書き込みたいときはPWRまたはENをLにします。
 
-:::rmnote
+### MCUロードのタイミングとデータ
 
-\newpage
+MCUロードシーケンスの詳細が、旧リビジョンのコンフィグレーションガイドに乗っています。新リビジョンにはここまで詳細には書かれていません。
+新旧リビジョンに開きがあるのでなんとも言えませんが、新リビジョンは内容が劣化しています。
 
-| The SLG47910 device is configured using a single data pin (SPI_SI).
-| To enable SPI Configuration:
-| Hold GPIO4 (SPI_CS) HIGH for a minimum delay of 1055 μs to enable SPI mode.
-| After entering SPI mode, internal logic will release GPIO4 (SPI_CS) from driving through the GPIO.
-| The internal Config-Circuit which acts as the controller will control the SPI interface (GPIO3, GPIO4, GPIO5, and
-| GPIO6) throughout the FPGA’s configuration.
-| The Config-Circuit sends a wake-up command (0xAB) to the SPI flash device first and then it sends a fast read
-| command (0x0B).
-| The Config-Circuit will generate an internal Config signal, Done = 1.
+> In this mode, `SPI_SS` should be held LOW initially. After POR, the `CONFIG/SPI_MOSI` (GPIO6) signal will go
+> LOW signaling the host (MCU) that it can start sending data to the device. After the reset is de-asserted, the host
+> should send 320-word `SPI_SCK` cycles (PREAMBLE) while holding `SPI_SS` LOW and set `SPI_SI` data to 0.
+> PREAMBLE is used to flush the SLG47910 FPGA Core before configuring the array. After the PREAMBLE, the
+> MCU sends a sync word (32-bits) followed by 288-bits of data to configure other SoC registers. After the 288-bits
+> are sent, the MCU will then send configuration bits to the FPGA Core. Once the configuration bitstream is sent,
+> the host keeps `SPI_SS` LOW and continue to send `SPI_SCK`s (POSTAMBLE) until it sees the `CONFIG` signal go
+> HIGH.
 
-:::
+![MCUロードタイミング(旧版ドキュメントより抜粋)](images/mcu-load-detailed-timing.png){#fig:mcu-load-detailed-timing width=100mm .figurediv}
+
+上記によるとビットストリームの前後に同期用信号を足しなさいと書かれていますが、この部分は開発ソフトの更新に伴い自動生成されるようになったので、
+エンドユーザーは気にしなくて良くなったようです。
 
 # サンプルプロジェクトをコンパイルしてみる
 
