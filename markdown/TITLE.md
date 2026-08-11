@@ -388,8 +388,6 @@ SPIシリアルフラッシュメモリブレークアウト基板
 
 ![自作フラッシュメモリモジュール（W25Q16JVUXIQ）](images/spi-flash-module-craft-1.png){width=85mm #fig:spi-flash-module-1}
 
-\newpage
-
 ### フラッシュ書き込み・ロード・ベリファイ {#sec:flash-store-load-verify-1}
 
 RP2040からフラッシュに書き込むときは、SPI1バスを使用します。[main.py]{custom-style="PreprocessorTok"}に
@@ -413,8 +411,6 @@ MicroPythonのREPL上で[flashboot.store()]{custom-style="PreprocessorTok"}でMC
 CSピンだけはリセット解除後Hに保ちたいので抵抗を介したプルアップが必要ですが、ほかは
 直結で大丈夫です。変換基板は裏面を絶縁したあとで[カプトン両面テープ](#ref-monotaro-capton-double-side-tape)などの耐熱両面テープでMCUに固定します。
 電源は3.3Vにつなぎます。作例ではMCU用のフラッシュメモリのピンにつなげました。
-
-\newpage
 
 ::: {#fig:onboard-flash-mod .figurediv col=2}
 
