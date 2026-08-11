@@ -443,7 +443,7 @@ ValueError: bad MOSI pin
 これは仕様なので、別のアプローチをします。任意のIOピンを操作してSPIマスタにできる`SoftSPI`クラス
 を利用して、MOSI・MISOを入れ替えます（[@fig:spi-bus-collision]）。
 
-![MCUピンを追加せずにSPIバスのMOSI・MISOを入れ替える](images/spi-bus-collision.png){height=65mm #fig:spi-bus-collision}
+![MCUピンを追加せずにSPIバスのMOSI・MISOを入れ替える](images/spi-bus-collision.png){height=100mm #fig:spi-bus-collision}
 
 ### フラッシュ書き込み・ロード・ベリファイ
 
