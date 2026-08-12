@@ -90,11 +90,11 @@ docx_coreprop:
     table-style: "Centered"
     para-style: "Table Body Center"
     rows:
-      - "「Shrike」FPGAボード試してみたレポート / RP2040と連携動作もできる・はず"
+      - "「Shrike」FPGAボード試してみたレポート / 専用ライターいらずのマイコンFPGAボード"
       - "K4ZUKI / KY技研"
       - "Comiket 108 / 2026"
       - |
-        Markdown x Pandoc Version 3.7 (DOCX writer)
+        Markdown x Pandoc Version 3.9 (DOCX writer)
         with docx-coreprop-writer program
-      - "キンコーズオンラインで印刷製本"
+      - "キンコーズオンラインで印刷製本・秋葉原店で受け取り"
 ...
